@@ -1,12 +1,13 @@
 import React from 'react';
 import ContactItem from './ContactItem'; 
+import './ContactList.css';
 
 function ContactList({ person , deletePerson }) {
     // console.log(person);
 
     if (person) {
         return (
-            <ul>
+            <ul className="contact-list">
           {person.map((person, index) => (
             <ContactItem 
             key={index} 
