@@ -14,7 +14,7 @@ function ContactForm({addPerson}) {
             name,
             email
         }
-        console.log(newPerson);
+        // console.log(newPerson);
 
         setName("");
         setEmail("");
@@ -27,9 +27,8 @@ function ContactForm({addPerson}) {
     return (
         <div style={{ textAlign: "center", marginTop: "40px" }}>
             <hr style={{ margin: "30px 0" }} />
-            <h1>🚀 React Form </h1>
 
-            <h2>Add a Person</h2>
+            <h1>Add a Person</h1>
             <form onSubmit={handleSubmit}>
                 
                 <input

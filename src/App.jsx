@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ContactForm from './ContactForm';
+import ContactList from './ContactList';
 
 // import './App.css'
 
@@ -12,7 +13,10 @@ function App() {
   }
 
   return (
+    <>
     <ContactForm addPerson={addPerson}/>
+    <ContactList person={person}/>
+    </>
   )
 }
 
