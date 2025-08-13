@@ -6,18 +6,25 @@ import ContactList from './ContactList';
 
 function App() {
 
-  const [person, setPerson] = useState("");
+  const [person, setPerson] = useState([]);
 
-  const addPerson = (newPerson)=>{
-    setPerson(newPerson)
+  const addPerson = (newPerson) => {
+    setPerson([...person, newPerson])
   }
+
+  const deletePerson = (index) => {
+    setPerson(person => person.filter((_, i) => i !== index));
+  };
+
 
   return (
     <>
-    <ContactForm addPerson={addPerson}/>
-    <ContactList person={person}/>
+      <ContactForm addPerson={addPerson} />
+      <ContactList person={person} deletePerson={deletePerson} />
     </>
   )
 }
 
-export default App
+
+export default App;
+

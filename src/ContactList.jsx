@@ -1,24 +1,25 @@
 import React from 'react';
+import ContactItem from './ContactItem'; 
 
-function ContactList({ person }) {
+function ContactList({ person , deletePerson }) {
     // console.log(person);
-    let content;
 
     if (person) {
-        content =(<ul>
-            {/* <ContactItem person={person}/> */}
-        </ul>)
+        return (
+            <ul>
+          {person.map((person, index) => (
+            <ContactItem 
+            key={index} 
+            person={person} 
+            deletePerson={() => deletePerson(index)}/>
+          ))}
+        </ul>
+        )
 
     } else {
-        content = <p>No Contacts yet.</p>;
+        return <p>No Contacts yet.</p>;
     }
 
-    return (
-        <div style={{ textAlign: "center", marginTop: "40px" }}>
-            <h1>Contacts</h1>
-            {content}
-        </div>
-    );
 }
 
 export default ContactList;
