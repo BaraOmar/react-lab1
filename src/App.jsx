@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
+import ContactForm from './components/ContactForm';
+import ContactList from './components/ContactList';
 
 // import './App.css'
 
@@ -18,11 +18,11 @@ function App() {
 
 
   return (
-    <>
+    <div className="app-container">
       <ContactForm addPerson={addPerson} />
       <ContactList person={person} deletePerson={deletePerson} />
-    </>
-  )
+    </div>
+  );
 }
 
 
